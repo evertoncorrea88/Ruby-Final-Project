@@ -19,11 +19,16 @@ class RegisterController < ApplicationController
       else
           @check_in = CheckIn.create(host_id: @host.id, guest_id: @guest.id, date_in: date_in, date_out: date_out)
           @check_in.save
+          success = true
           @note = 'The check in was completed.'
       end
       
       respond_to do |format|
-          format.html    
+          if success   
+			format.html { render action: "check_in" }
+		  else
+			format.html { render action: "check_in_error"}
+		  end
       end    
   end
 
