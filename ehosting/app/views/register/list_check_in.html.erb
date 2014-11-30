@@ -1,2 +1,18 @@
-<h1>Register#list_check_in</h1>
-<p>Find me in app/views/register/list_check_in.html.erb</p>
+<h2>Generate report for Host</h2> 
+<br/>
+<h3>
+	<%= form_for :list_form, url: {action: :list_result} do |form| %>
+		<div class="field">
+			<%= form.label :host_name %><br>
+			<%= form.text_field :host_name %>
+		</div>
+		<div class="actions">
+			<%= form.submit %>
+		</div>
+	<% end %>
+</h3>
+
+<br>
+<%= link_to 'Back', home_page_index_path %>
+
+

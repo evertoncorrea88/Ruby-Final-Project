@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
-  
+    
   get 'register/index'
 
+  get 'register/list_check_in' 
+    
   post 'register/check_in'
 
-  get 'register/list_check_in'
-
-  resources :check_ins
+  post 'register/list_result'  
 
   get 'home_page/login'
-
-  post 'home_page/verify'
 	
   get 'home_page/index'
   
+  post 'home_page/verify'
+    
+  resources :check_ins
+    
   resources :admins
 
   resources :guests

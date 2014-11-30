@@ -1,0 +1,26 @@
+<h1>Listing check_ins</h1>
+
+<table border="1" style="width:70%">
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Guest</th>
+      <th>Date in</th>
+      <th>Date out</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checks.each do |check_in| %>
+      <tr>
+        <td><%= check_in.host.name %></td>
+        <td><%= check_in.guest.name %></td>
+        <td><%= check_in.date_in %></td>
+        <td><%= check_in.date_out %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Back', register_list_check_in_path %>
