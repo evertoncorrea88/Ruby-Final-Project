@@ -1,0 +1,26 @@
+
+<h2>Check In</h2> 
+<h3>
+     <%= form_for :register, url: {action: :check_in} do |form| %>
+        <div class="field">
+            <%= form.label :host_name %><br>
+            <%= form.text_field :host_name %>
+        </div>
+        <div class="field">
+            <%= form.label :guest_name %><br>
+            <%= form.text_field :guest_name %>
+        </div>
+        <div class="field">
+            <%= form.label :date_in %><br>
+            <%= form.date_select :date_in %>
+        </div>
+        <div class="field">
+            <%= form.label :date_out %><br>
+            <%= form.date_select :date_out %>
+        </div>
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+
+    <% end %>
+ </h3>

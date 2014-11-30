@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'register/index'
+
+  post 'register/check_in'
+
+  get 'register/list_check_in'
+
+  resources :check_ins
+
   get 'home_page/login'
 
   post 'home_page/verify'

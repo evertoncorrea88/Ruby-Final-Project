@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @check_in.host_id %>
+</p>
+
+<p>
+  <strong>Guest:</strong>
+  <%= @check_in.guest_id %>
+</p>
+
+<p>
+  <strong>Date in:</strong>
+  <%= @check_in.date_in %>
+</p>
+
+<p>
+  <strong>Date out:</strong>
+  <%= @check_in.date_out %>
+</p>
+
+<%= link_to 'Edit', edit_check_in_path(@check_in) %> |
+<%= link_to 'Back', check_ins_path %>

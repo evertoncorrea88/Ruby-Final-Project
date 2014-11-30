@@ -1,0 +1,31 @@
+<h1>Listing check_ins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Guest</th>
+      <th>Date in</th>
+      <th>Date out</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @check_ins.each do |check_in| %>
+      <tr>
+        <td><%= check_in.host_id %></td>
+        <td><%= check_in.guest_id %></td>
+        <td><%= check_in.date_in %></td>
+        <td><%= check_in.date_out %></td>
+        <td><%= link_to 'Show', check_in %></td>
+        <td><%= link_to 'Edit', edit_check_in_path(check_in) %></td>
+        <td><%= link_to 'Destroy', check_in, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Check in', new_check_in_path %>
