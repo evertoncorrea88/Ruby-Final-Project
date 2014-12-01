@@ -15,12 +15,12 @@
         <div class="list-group">
             <%= link_to 'Home Page', home_page_index_path,  class: "list-group-item" %>
             <%= link_to 'New Guest', new_guest_path,  class: "list-group-item" %>
-            <%= link_to 'New Check in', register_index_path, class: "list-group-item active" %>
-            <%= link_to 'Reports', register_list_check_in_path, class: "list-group-item" %>
+            <%= link_to 'New Check in', register_index_path, class: "list-group-item" %>
+            <%= link_to 'Reports', register_list_check_in_path, class: "list-group-item active" %>
             <%= link_to 'Logout', home_page_login_path, class: "list-group-item" %>
         </div>
     </div><!--/.sidebar-offcanvas-->
 </div>
 
 
-<%= link_to 'Back', register_index_path, :class => "btn btn-primary", :style => "color: #fff" %>
+<%= link_to 'Back', register_list_check_in_path, :class => "btn btn-primary", :style => "color: #fff" %>

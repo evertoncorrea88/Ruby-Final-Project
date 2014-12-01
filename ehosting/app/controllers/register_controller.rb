@@ -26,7 +26,7 @@ class RegisterController < ApplicationController
       
       respond_to do |format|
           if success   
-			format.html { render action: "check_in" }
+			format.html { render action: "check_in_success" }
 		  else
 			format.html { render action: "check_in_error"}
 		  end
@@ -50,8 +50,8 @@ class RegisterController < ApplicationController
 		
 		respond_to do |format|
 			if @checks == nil
-				@note = 'No check ins for this host.'		
-				format.html { render action: "check_in_error" }
+				@note = 'Host not found.'		
+				format.html { render action: "list_error" }
 			else
 				format.html { render action: "list_result"}
 			end

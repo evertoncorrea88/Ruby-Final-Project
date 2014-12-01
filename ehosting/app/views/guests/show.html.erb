@@ -1,19 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="row row-offcanvas row-offcanvas-right">
 
-<p>
-  <strong>Name:</strong>
-  <%= @guest.name %>
-</p>
+    <div class="col-xs-12 col-sm-9">
+        <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+        </p>
+        <div class="jumbotron">
+            <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @guest.email %>
-</p>
+            <p>
+              <strong>Name:</strong>
+              <%= @guest.name %>
+            </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @guest.phone %>
-</p>
+            <p>
+              <strong>Email:</strong>
+              <%= @guest.email %>
+            </p>
 
-<%= link_to 'Edit', edit_guest_path(@guest) %> |
-<%= link_to 'Back', home_page_index_path %>
+            <p>
+              <strong>Phone:</strong>
+              <%= @guest.phone %>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="list-group">
+            <%= link_to 'Home Page', home_page_index_path,  class: "list-group-item" %>
+            <%= link_to 'New Guest', new_guest_path,  class: "list-group-item active" %>
+            <%= link_to 'New Check in', register_index_path, class: "list-group-item" %>
+            <%= link_to 'Reports', register_list_check_in_path, class: "list-group-item" %>
+            <%= link_to 'Logout', home_page_login_path, class: "list-group-item" %>
+        </div>
+    </div><!--/.sidebar-offcanvas-->
+</div>
+
+<%= link_to 'Edit', edit_guest_path(@guest), class: "btn btn-primary", :style => "color: #fff" %> 
+<%= link_to 'Back', home_page_index_path, class: "btn btn-primary", :style => "color: #fff" %>

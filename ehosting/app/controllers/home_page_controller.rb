@@ -1,6 +1,6 @@
 class HomePageController < ApplicationController
-  def index
-  end
+    def index
+    end
   
 	def verify
 		@params = params[:admin]
@@ -16,5 +16,4 @@ class HomePageController < ApplicationController
 		end
 	end
 
-  
 end

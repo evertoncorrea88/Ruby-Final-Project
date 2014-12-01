@@ -1,13 +1,17 @@
+<h1>Log in</h1>
 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <%= form_for  :admin,  url: {action: :verify} do |f| %>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: 'form-control' %><br>
 
-<h2>Login</h2>
-<h3>
-	<%= form_for  :admin,  url: {action: :verify} do |form| %>
-		<p><label_for="email">Email:</label>
-		<%= form.text_field  :email,  size: 20 %></p>
-		<p><label_for = "password">Password:</label>
-		<%= form.password_field  :password,  size: 20 %></p
-		<p><%= submit_tag "Login" %></p>
-	<% end %>
-</h3>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %><br>
+
+            <%= f.submit "Log in", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
+    
 
