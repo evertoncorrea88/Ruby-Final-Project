@@ -13,6 +13,10 @@
                     <%= form.label :host_name %><br>
                     <%= form.text_field :host_name %>
                 </div>
+                <div class="field">
+                    <%= form.label :date %><br>
+                    <%= form.month_field :date %>
+                </div>                                
                 <div class="actions">
                     <%= form.submit "Search Host", class: "btn btn-primary" %>
                 </div>

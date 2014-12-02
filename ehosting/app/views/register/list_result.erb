@@ -5,14 +5,18 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
         <div class="jumbotron">
-            <h3>Listing check_ins</h3><br>
-
+            <h3>Check Ins Report</h3><br>
+            
+            <br>
+            Host:  <%= @host_name %>
+            <br><br>
+            
             <table class="table table-striped" border="1">
               <thead>
                 <tr>
                   <th>Guest</th>
                   <th>Date in</th>
-                  <th>Date out</th>
+                  <th>Date out</th>       
                 </tr>
               </thead>
 
@@ -25,7 +29,11 @@
                   </tr>
                 <% end %>
               </tbody>
-            </table>
+            </table>            
+            
+            Total overnights:  <%= @total_overnights %><br>
+            Balance:  <%= @balance %>            
+            
         </div>
 
     </div>

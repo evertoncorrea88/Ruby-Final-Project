@@ -1,0 +1,56 @@
+@date = Time.now
+@date.strftime("%B %d, %Y")
+Time.now.strftime("%Y-%m-%d")  # 2013-01-08
+
+Date.new(2001,2,3) 
+
+chat = "I love Ruby"
+    chat = chat.split(" ")
+    chat[0]
+
+	
+Model.where('extract(year  from date_column) = ?', desired_year)
+Model.where('extract(month from date_column) = ?', desired_month)
+Model.where('extract(day   from date_column) = ?', desired_day_of_month)
+
+Like.where('user_id = ? AND post_id = ?', params[:user_id], params[:post_id])
+or
+
+Like.where('user_id = :user_id AND post_id = :post_id', params)
+
+
+Client.all(:conditions => { :created_at => (Time.now.midnight - 1.day)..Time.now.midnight})
+
+	
+	
+
+      @date_in = Date.new @params["date_in(1i)"].to_i, @params["date_in(2i)"].to_i, @params["date_in(3i)"].to_i      
+      
+#       date = @params["date_out"].strftime("%B %d, %Y") 2014-11-19s	
+	      @date_out = Date.new @params["date_out(1i)"].to_i, @params["date_out(2i)"].to_i, @params["date_out(3i)"].to_i
+	      
+	      
+	      # 			@checks = CheckIn.where("host_id = ? AND ( date_in = ? OR date_out = ? )", @host.id, @date, @date)	
+# 			@checks = CheckIn.where("host_id = ? AND date_in = ?", @host.id, @date_begin)
+			
+# 			@checks = CheckIn.where("host_id = ? AND extract(month from date_in) = ?", @host.id, date[1])
+			
+			@checks = CheckIn.where("host_id = ? AND date(date_in) BETWEEN ? AND ?", @host.id, @date_begin, @date_end)			
+			
+
+
+						
+# 			@checks = CheckIn.where("extract(month from date_in) = ?", date[1])
+			
+# 			Model.where('extract(month from date_column) = ?', desired_month)
+			
+# 			@checks = CheckIn.where(:date_in => @date_begin..@date_end)
+
+
+
+			@checks = CheckIn.where("host_id = ? AND date(date_in) BETWEEN ? AND ?", @host.id, @date_begin, @date_end)
+			@total_overnights = 0			
+			@checks.each do |i|
+   				@total_overnights = @total_overnights + (i.date_out - i.date_in).to_i
+			end
+			@balance = 10 - @total_overnights		
